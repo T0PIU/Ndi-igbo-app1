@@ -1,0 +1,22 @@
+{
+  "name": "ndi-igbo-app",
+  "version": "1.0.0",
+  "description": "Ndi Igbo: community, campus, events, roommates, local business, newsletters and music for Imo State.",
+  "private": true,
+  "type": "module",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 test/api.test.js",
+    "make-admin": "node --disable-warning=ExperimentalWarning scripts/make-admin.js",
+    "reset-password": "node --disable-warning=ExperimentalWarning scripts/reset-password.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}

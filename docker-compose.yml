@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports: ["3000:3000"]
+    env_file: .env
+    environment: { DATABASE_URL: "postgres://ndi:ndi@db:5432/ndi", TRUST_PROXY: "1", COOKIE_SECURE: "false" }
+    depends_on: [db]
+  db:
+    image: postgres:17
+    environment: { POSTGRES_USER: ndi, POSTGRES_PASSWORD: ndi, POSTGRES_DB: ndi }
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+volumes: { pgdata: {} }
